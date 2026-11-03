@@ -1,6 +1,24 @@
-# RFC 10 — Documentation Linter
+# RFC 10 — documentation linter
 
-Run `go run ./cmd/notelint -file examples/notes.json`. See [RFC_10.md](RFC_10.md) for semantics and limitations.
+Public, MIT-licensed Go educational lab. Requires Go 1.22+.
+
+```bash
+git clone https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0010-documentation-linter.git
+cd rfc-0010-documentation-linter
+go run ./cmd/notelint -file examples/notes.json
+go test -race ./...
+go vet ./...
+```
+
+This repository includes the shared RFC 5–10 lab library and test harness so every command and test runs independently after cloning. Its focus is RFC 10. These are modern educational models, not historical protocol implementations or production banking software.
+
+Source, tests, examples and original validation reports are committed. GitHub Actions is configured; a workflow file alone does not establish a successful remote run. Earlier validation reports record local checks.
+
+## Publication
+
+Published to this public repository on 3 November 2026. Browser hosting is separate; no live Go backend is claimed. Historical pre-publication remarks in included reports refer to the earlier ZIP delivery.
+
+## Shared lab guide
 
 # RFC Go Labs 5–10
 
