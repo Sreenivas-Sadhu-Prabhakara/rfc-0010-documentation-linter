@@ -1,0 +1,4 @@
+[
+ {"id":1,"title":"Local input handling","author":"Example Engineer","affiliation":"RFC Labs","date":"2026-11-03","body":"Could local editing improve perceived latency?"},
+ {"id":2,"title":"Local input handling","author":"Example Engineer","affiliation":"RFC Labs","date":"2026-11-03","body":"Keep editing local and require authoritative server validation.","replaces":1}
+]
