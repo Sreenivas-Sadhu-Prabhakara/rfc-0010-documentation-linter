@@ -130,13 +130,25 @@ See VALIDATION_RFC11.md for checks actually executed.
 
 ## Publication and hosting
 
-Dedicated repository creation and Pages enablement were blocked by the browser's
-GitHub sign-in screen. The connector supports source writes to existing
-repositories but exposes no repository-creation or Pages-setting operation.
-To preserve and publish actual code, this lab was added to the existing public
-MIT-licensed shared-suite repository, `rfc-0010-documentation-linter`.
+Actual source was committed to the existing public MIT-licensed shared-suite
+repository, `rfc-0010-documentation-linter`, and fetched back for verification:
+https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0010-documentation-linter/commit/41c8c35e2d3e8f5f9aec0dd55ea9f402ac299cd4
 
-The remaining hosting step is to enable GitHub Pages for `main` / `docs` in
-repository settings, then verify the resulting live `/rfc11/` page. A dedicated
-`rfc-0011-session-lab` repository also remains to be created and populated when
-repository creation is available. Neither operation is claimed complete.
+GitHub Actions passed for that source commit:
+https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0010-documentation-linter/actions/runs/41747685741
+
+The static trace viewer is publicly hosted through Sites:
+https://rfc11-session-lifecycle.sadhu-sreenivas.chatgpt.site
+
+Public access and successful deployment were confirmed. Browser QA verified all
+11 expandable steps and the Expand all / Collapse all control. The deployed
+page was opened and visually checked. It serves saved Go output and is not a
+live Go backend. The same HTML remains in `docs/rfc11/index.html` for portable
+hosting; Sites is used because GitHub Pages configuration was unavailable.
+
+The browser's GitHub sign-in screen blocked dedicated repository creation and
+Pages configuration. The connector exposes source writes to existing repos,
+but no repo-creation or Pages-setting operation. A dedicated
+`rfc-0011-session-lab` repository remains to be created and populated when that
+capability is available. Code publication and public static hosting succeeded;
+the separate-repository layout is unfinished.

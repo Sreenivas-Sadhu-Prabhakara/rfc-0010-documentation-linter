@@ -20,11 +20,18 @@ Executed successfully:
 Generated `examples/sessions-result.json` and `docs/rfc11/index.html` from the
 compiled Go executable. No Go server, banking integration, historical wire
 interoperability, or load benchmark was run. The static HTML was checked by
-generation and content assertions; browser visual/interaction testing was not run.
+generation and content assertions. Browser QA then verified all 11 steps expand
+and collapse, and the deployed public page was opened and visually checked.
 
-The existing GitHub Actions workflow runs tests, vet and build on push. Remote
-CI result must be inspected separately; local checks do not prove CI success.
-New repository creation and Pages configuration require GitHub browser sign-in
-which was not available during this run. The source was prepared for public
-check-in to the existing shared-suite repository; verify the published commit
-and source before treating publication as complete.
+The source commit 41c8c35e2d3e8f5f9aec0dd55ea9f402ac299cd4 was fetched back and
+compared with the local session source. GitHub Actions run 41747685741 completed
+successfully for that exact commit (tests, vet, build). The standalone packaged
+lab also passed race tests, vet and build.
+
+Public static deployment succeeded:
+https://rfc11-session-lifecycle.sadhu-sreenivas.chatgpt.site
+
+This hosts the saved trace, not a Go backend. Dedicated repository creation and
+GitHub Pages configuration were blocked by browser sign-in; source is public
+in the existing shared-suite repository instead. See RFC_11.md for source,
+commit and CI URLs.

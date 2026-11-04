@@ -107,4 +107,4 @@ go run ./cmd/sessionlab -html > docs/rfc11/index.html
 go test -race ./...
 ```
 
-Open `docs/rfc11/index.html` locally to explore the saved Go-generated trace. It is a static report, not a live backend. Source and meaningful tests were added on 4 November 2026 under this repository's MIT license. A dedicated RFC 11 repository and live Pages hosting remain pending GitHub sign-in. Covered: RFC 11; next: RFC 12. See [VALIDATION_RFC11.md](VALIDATION_RFC11.md).
+Open `docs/rfc11/index.html` locally to explore the saved Go-generated trace. It is a static report, not a live backend. Source and meaningful tests were added on 4 November 2026 under this repository's MIT license. The static trace is publicly hosted at https://rfc11-session-lifecycle.sadhu-sreenivas.chatgpt.site . GitHub Actions passed for source commit 41c8c35e2d3e8f5f9aec0dd55ea9f402ac299cd4. A dedicated RFC 11 repository and GitHub Pages configuration remain pending GitHub sign-in; public static hosting through Sites is complete. Covered: RFC 11; next: RFC 12. See [VALIDATION_RFC11.md](VALIDATION_RFC11.md).
