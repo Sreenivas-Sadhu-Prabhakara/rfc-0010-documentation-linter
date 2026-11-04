@@ -96,3 +96,15 @@ See [RFC_9.md](RFC_9.md). Run `go run ./cmd/linklab` for owned link allocation, 
 ## RFC 10
 
 See [RFC_10.md](RFC_10.md). Run `go run ./cmd/notelint -file examples/notes.json`.
+
+## RFC 11 — session lifecycle and inbound routing
+
+The shared suite now includes RFC 11. Read [RFC_11.md](RFC_11.md) for the historical context, current RFC Editor status, applications, model boundaries and hosting limitations.
+
+```sh
+go run ./cmd/sessionlab
+go run ./cmd/sessionlab -html > docs/rfc11/index.html
+go test -race ./...
+```
+
+Open `docs/rfc11/index.html` locally to explore the saved Go-generated trace. It is a static report, not a live backend. Source and meaningful tests were added on 4 November 2026 under this repository's MIT license. A dedicated RFC 11 repository and live Pages hosting remain pending GitHub sign-in. Covered: RFC 11; next: RFC 12. See [VALIDATION_RFC11.md](VALIDATION_RFC11.md).

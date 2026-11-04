@@ -1,0 +1,13 @@
+[
+  {"op":"open","user":"bank-adapter","host":"cloud-ledger","kind":"primary"},
+  {"op":"deliver","host":"cloud-ledger","incoming":15,"id":1,"payload":"early response"},
+  {"op":"ack","user":"bank-adapter","host":"cloud-ledger","id":1,"incoming":15},
+  {"op":"open","user":"bank-adapter","host":"cloud-ledger","kind":"auxiliary","parent":1},
+  {"op":"ack","user":"bank-adapter","host":"cloud-ledger","id":2,"incoming":21},
+  {"op":"deliver","host":"cloud-ledger","incoming":21,"id":2,"payload":"statement batch 1"},
+  {"op":"deliver","host":"cloud-ledger","incoming":21,"id":2,"payload":"statement batch 2"},
+  {"op":"drain","user":"bank-adapter","id":2},
+  {"op":"deliver","host":"cloud-ledger","incoming":21,"id":2,"payload":"statement batch 2"},
+  {"op":"close","user":"bank-adapter","id":1},
+  {"op":"ack","user":"bank-adapter","host":"cloud-ledger","id":2,"incoming":21}
+]

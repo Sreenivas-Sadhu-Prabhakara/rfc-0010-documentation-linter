@@ -1,0 +1,306 @@
+[
+  {
+    "step": 1,
+    "event": {
+      "op": "open",
+      "user": "bank-adapter",
+      "host": "cloud-ledger",
+      "kind": "primary"
+    },
+    "opened": {
+      "id": 1,
+      "user": "bank-adapter",
+      "host": "cloud-ledger",
+      "number": 1,
+      "kind": "primary",
+      "established": false
+    },
+    "state": [
+      {
+        "id": 1,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 1,
+        "kind": "primary",
+        "established": false,
+        "incoming": 0,
+        "queued": 0
+      }
+    ]
+  },
+  {
+    "step": 2,
+    "event": {
+      "op": "deliver",
+      "host": "cloud-ledger",
+      "id": 1,
+      "incoming": 15,
+      "payload": "early response"
+    },
+    "error": "unknown or stale route",
+    "state": [
+      {
+        "id": 1,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 1,
+        "kind": "primary",
+        "established": false,
+        "incoming": 0,
+        "queued": 0
+      }
+    ]
+  },
+  {
+    "step": 3,
+    "event": {
+      "op": "ack",
+      "user": "bank-adapter",
+      "host": "cloud-ledger",
+      "id": 1,
+      "incoming": 15
+    },
+    "state": [
+      {
+        "id": 1,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 1,
+        "kind": "primary",
+        "established": true,
+        "incoming": 15,
+        "queued": 0
+      }
+    ]
+  },
+  {
+    "step": 4,
+    "event": {
+      "op": "open",
+      "user": "bank-adapter",
+      "host": "cloud-ledger",
+      "kind": "auxiliary",
+      "parent": 1
+    },
+    "opened": {
+      "id": 2,
+      "user": "bank-adapter",
+      "host": "cloud-ledger",
+      "number": 2,
+      "kind": "auxiliary",
+      "parent": 1,
+      "established": false
+    },
+    "state": [
+      {
+        "id": 1,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 1,
+        "kind": "primary",
+        "established": true,
+        "incoming": 15,
+        "queued": 0
+      },
+      {
+        "id": 2,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 2,
+        "kind": "auxiliary",
+        "parent": 1,
+        "established": false,
+        "incoming": 0,
+        "queued": 0
+      }
+    ]
+  },
+  {
+    "step": 5,
+    "event": {
+      "op": "ack",
+      "user": "bank-adapter",
+      "host": "cloud-ledger",
+      "id": 2,
+      "incoming": 21
+    },
+    "state": [
+      {
+        "id": 1,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 1,
+        "kind": "primary",
+        "established": true,
+        "incoming": 15,
+        "queued": 0
+      },
+      {
+        "id": 2,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 2,
+        "kind": "auxiliary",
+        "parent": 1,
+        "established": true,
+        "incoming": 21,
+        "queued": 0
+      }
+    ]
+  },
+  {
+    "step": 6,
+    "event": {
+      "op": "deliver",
+      "host": "cloud-ledger",
+      "id": 2,
+      "incoming": 21,
+      "payload": "statement batch 1"
+    },
+    "state": [
+      {
+        "id": 1,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 1,
+        "kind": "primary",
+        "established": true,
+        "incoming": 15,
+        "queued": 0
+      },
+      {
+        "id": 2,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 2,
+        "kind": "auxiliary",
+        "parent": 1,
+        "established": true,
+        "incoming": 21,
+        "queued": 1
+      }
+    ]
+  },
+  {
+    "step": 7,
+    "event": {
+      "op": "deliver",
+      "host": "cloud-ledger",
+      "id": 2,
+      "incoming": 21,
+      "payload": "statement batch 2"
+    },
+    "error": "inbox full: sender must retry explicitly",
+    "state": [
+      {
+        "id": 1,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 1,
+        "kind": "primary",
+        "established": true,
+        "incoming": 15,
+        "queued": 0
+      },
+      {
+        "id": 2,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 2,
+        "kind": "auxiliary",
+        "parent": 1,
+        "established": true,
+        "incoming": 21,
+        "queued": 1
+      }
+    ]
+  },
+  {
+    "step": 8,
+    "event": {
+      "op": "drain",
+      "user": "bank-adapter",
+      "id": 2
+    },
+    "messages": [
+      "statement batch 1"
+    ],
+    "state": [
+      {
+        "id": 1,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 1,
+        "kind": "primary",
+        "established": true,
+        "incoming": 15,
+        "queued": 0
+      },
+      {
+        "id": 2,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 2,
+        "kind": "auxiliary",
+        "parent": 1,
+        "established": true,
+        "incoming": 21,
+        "queued": 0
+      }
+    ]
+  },
+  {
+    "step": 9,
+    "event": {
+      "op": "deliver",
+      "host": "cloud-ledger",
+      "id": 2,
+      "incoming": 21,
+      "payload": "statement batch 2"
+    },
+    "state": [
+      {
+        "id": 1,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 1,
+        "kind": "primary",
+        "established": true,
+        "incoming": 15,
+        "queued": 0
+      },
+      {
+        "id": 2,
+        "user": "bank-adapter",
+        "host": "cloud-ledger",
+        "number": 2,
+        "kind": "auxiliary",
+        "parent": 1,
+        "established": true,
+        "incoming": 21,
+        "queued": 1
+      }
+    ]
+  },
+  {
+    "step": 10,
+    "event": {
+      "op": "close",
+      "user": "bank-adapter",
+      "id": 1
+    },
+    "state": []
+  },
+  {
+    "step": 11,
+    "event": {
+      "op": "ack",
+      "user": "bank-adapter",
+      "host": "cloud-ledger",
+      "id": 2,
+      "incoming": 21
+    },
+    "error": "unknown or mismatched request",
+    "state": []
+  }
+]

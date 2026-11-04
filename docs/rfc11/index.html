@@ -1,0 +1,300 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RFC 11 · Session lifecycle lab</title>
+<style>body{font:17px/1.6 system-ui;background:#101827;color:#e8edf5;max-width:1000px;margin:40px auto;padding:0 24px}h1{font-size:clamp(30px,5vw,52px);line-height:1.1}a{color:#86dafa}p{max-width:75ch}details{border:1px solid #43516a;border-radius:12px;margin:14px 0;padding:16px;background:#172238}summary{cursor:pointer;font-weight:650}.error{color:#ffb9ae}.ok{color:#99e3b1}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.5 ui-monospace,monospace}.tag{color:#a4b5cf}button{font:inherit;background:#86dafa;border:0;border-radius:8px;padding:10px 18px;cursor:pointer}footer{margin:40px 0;color:#a4b5cf}</style>
+<p class="tag">INTERNET RFC SERIES / 011</p><h1>A connection has a lifecycle.</h1><p>Explore a Go-generated trace: reserve → acknowledge → route → drain → close. Expand any step to inspect all active connections and their bounded inboxes.</p>
+<p>Inspired by G. Deloche's August 1969 GORDO design. <a href="https://www.rfc-editor.org/info/rfc11/">RFC 11</a> has status Unknown and is obsoleted by RFC 33. This is an educational model with modern generation IDs and explicit backpressure, not historical protocol compliance or a banking service.</p>
+<p>This static viewer contains saved output from Go. It does not run a server or execute Go in your browser. To change the scenario, edit examples/sessions.json and regenerate with the command in the README.</p><button id="expand">Expand all steps</button>
+<details><summary>Step 1 · open · <span class="ok">Accepted</span></summary><pre>{
+  &#34;step&#34;: 1,
+  &#34;event&#34;: {
+    &#34;op&#34;: &#34;open&#34;,
+    &#34;user&#34;: &#34;bank-adapter&#34;,
+    &#34;host&#34;: &#34;cloud-ledger&#34;,
+    &#34;kind&#34;: &#34;primary&#34;
+  },
+  &#34;opened&#34;: {
+    &#34;id&#34;: 1,
+    &#34;user&#34;: &#34;bank-adapter&#34;,
+    &#34;host&#34;: &#34;cloud-ledger&#34;,
+    &#34;number&#34;: 1,
+    &#34;kind&#34;: &#34;primary&#34;,
+    &#34;established&#34;: false
+  },
+  &#34;state&#34;: [
+    {
+      &#34;id&#34;: 1,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 1,
+      &#34;kind&#34;: &#34;primary&#34;,
+      &#34;established&#34;: false,
+      &#34;incoming&#34;: 0,
+      &#34;queued&#34;: 0
+    }
+  ]
+}</pre></details><details><summary>Step 2 · deliver · <span class="error">Rejected</span></summary><pre>{
+  &#34;step&#34;: 2,
+  &#34;event&#34;: {
+    &#34;op&#34;: &#34;deliver&#34;,
+    &#34;host&#34;: &#34;cloud-ledger&#34;,
+    &#34;id&#34;: 1,
+    &#34;incoming&#34;: 15,
+    &#34;payload&#34;: &#34;early response&#34;
+  },
+  &#34;error&#34;: &#34;unknown or stale route&#34;,
+  &#34;state&#34;: [
+    {
+      &#34;id&#34;: 1,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 1,
+      &#34;kind&#34;: &#34;primary&#34;,
+      &#34;established&#34;: false,
+      &#34;incoming&#34;: 0,
+      &#34;queued&#34;: 0
+    }
+  ]
+}</pre></details><details><summary>Step 3 · ack · <span class="ok">Accepted</span></summary><pre>{
+  &#34;step&#34;: 3,
+  &#34;event&#34;: {
+    &#34;op&#34;: &#34;ack&#34;,
+    &#34;user&#34;: &#34;bank-adapter&#34;,
+    &#34;host&#34;: &#34;cloud-ledger&#34;,
+    &#34;id&#34;: 1,
+    &#34;incoming&#34;: 15
+  },
+  &#34;state&#34;: [
+    {
+      &#34;id&#34;: 1,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 1,
+      &#34;kind&#34;: &#34;primary&#34;,
+      &#34;established&#34;: true,
+      &#34;incoming&#34;: 15,
+      &#34;queued&#34;: 0
+    }
+  ]
+}</pre></details><details><summary>Step 4 · open · <span class="ok">Accepted</span></summary><pre>{
+  &#34;step&#34;: 4,
+  &#34;event&#34;: {
+    &#34;op&#34;: &#34;open&#34;,
+    &#34;user&#34;: &#34;bank-adapter&#34;,
+    &#34;host&#34;: &#34;cloud-ledger&#34;,
+    &#34;kind&#34;: &#34;auxiliary&#34;,
+    &#34;parent&#34;: 1
+  },
+  &#34;opened&#34;: {
+    &#34;id&#34;: 2,
+    &#34;user&#34;: &#34;bank-adapter&#34;,
+    &#34;host&#34;: &#34;cloud-ledger&#34;,
+    &#34;number&#34;: 2,
+    &#34;kind&#34;: &#34;auxiliary&#34;,
+    &#34;parent&#34;: 1,
+    &#34;established&#34;: false
+  },
+  &#34;state&#34;: [
+    {
+      &#34;id&#34;: 1,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 1,
+      &#34;kind&#34;: &#34;primary&#34;,
+      &#34;established&#34;: true,
+      &#34;incoming&#34;: 15,
+      &#34;queued&#34;: 0
+    },
+    {
+      &#34;id&#34;: 2,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 2,
+      &#34;kind&#34;: &#34;auxiliary&#34;,
+      &#34;parent&#34;: 1,
+      &#34;established&#34;: false,
+      &#34;incoming&#34;: 0,
+      &#34;queued&#34;: 0
+    }
+  ]
+}</pre></details><details><summary>Step 5 · ack · <span class="ok">Accepted</span></summary><pre>{
+  &#34;step&#34;: 5,
+  &#34;event&#34;: {
+    &#34;op&#34;: &#34;ack&#34;,
+    &#34;user&#34;: &#34;bank-adapter&#34;,
+    &#34;host&#34;: &#34;cloud-ledger&#34;,
+    &#34;id&#34;: 2,
+    &#34;incoming&#34;: 21
+  },
+  &#34;state&#34;: [
+    {
+      &#34;id&#34;: 1,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 1,
+      &#34;kind&#34;: &#34;primary&#34;,
+      &#34;established&#34;: true,
+      &#34;incoming&#34;: 15,
+      &#34;queued&#34;: 0
+    },
+    {
+      &#34;id&#34;: 2,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 2,
+      &#34;kind&#34;: &#34;auxiliary&#34;,
+      &#34;parent&#34;: 1,
+      &#34;established&#34;: true,
+      &#34;incoming&#34;: 21,
+      &#34;queued&#34;: 0
+    }
+  ]
+}</pre></details><details><summary>Step 6 · deliver · <span class="ok">Accepted</span></summary><pre>{
+  &#34;step&#34;: 6,
+  &#34;event&#34;: {
+    &#34;op&#34;: &#34;deliver&#34;,
+    &#34;host&#34;: &#34;cloud-ledger&#34;,
+    &#34;id&#34;: 2,
+    &#34;incoming&#34;: 21,
+    &#34;payload&#34;: &#34;statement batch 1&#34;
+  },
+  &#34;state&#34;: [
+    {
+      &#34;id&#34;: 1,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 1,
+      &#34;kind&#34;: &#34;primary&#34;,
+      &#34;established&#34;: true,
+      &#34;incoming&#34;: 15,
+      &#34;queued&#34;: 0
+    },
+    {
+      &#34;id&#34;: 2,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 2,
+      &#34;kind&#34;: &#34;auxiliary&#34;,
+      &#34;parent&#34;: 1,
+      &#34;established&#34;: true,
+      &#34;incoming&#34;: 21,
+      &#34;queued&#34;: 1
+    }
+  ]
+}</pre></details><details><summary>Step 7 · deliver · <span class="error">Rejected</span></summary><pre>{
+  &#34;step&#34;: 7,
+  &#34;event&#34;: {
+    &#34;op&#34;: &#34;deliver&#34;,
+    &#34;host&#34;: &#34;cloud-ledger&#34;,
+    &#34;id&#34;: 2,
+    &#34;incoming&#34;: 21,
+    &#34;payload&#34;: &#34;statement batch 2&#34;
+  },
+  &#34;error&#34;: &#34;inbox full: sender must retry explicitly&#34;,
+  &#34;state&#34;: [
+    {
+      &#34;id&#34;: 1,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 1,
+      &#34;kind&#34;: &#34;primary&#34;,
+      &#34;established&#34;: true,
+      &#34;incoming&#34;: 15,
+      &#34;queued&#34;: 0
+    },
+    {
+      &#34;id&#34;: 2,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 2,
+      &#34;kind&#34;: &#34;auxiliary&#34;,
+      &#34;parent&#34;: 1,
+      &#34;established&#34;: true,
+      &#34;incoming&#34;: 21,
+      &#34;queued&#34;: 1
+    }
+  ]
+}</pre></details><details><summary>Step 8 · drain · <span class="ok">Accepted</span></summary><pre>{
+  &#34;step&#34;: 8,
+  &#34;event&#34;: {
+    &#34;op&#34;: &#34;drain&#34;,
+    &#34;user&#34;: &#34;bank-adapter&#34;,
+    &#34;id&#34;: 2
+  },
+  &#34;messages&#34;: [
+    &#34;statement batch 1&#34;
+  ],
+  &#34;state&#34;: [
+    {
+      &#34;id&#34;: 1,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 1,
+      &#34;kind&#34;: &#34;primary&#34;,
+      &#34;established&#34;: true,
+      &#34;incoming&#34;: 15,
+      &#34;queued&#34;: 0
+    },
+    {
+      &#34;id&#34;: 2,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 2,
+      &#34;kind&#34;: &#34;auxiliary&#34;,
+      &#34;parent&#34;: 1,
+      &#34;established&#34;: true,
+      &#34;incoming&#34;: 21,
+      &#34;queued&#34;: 0
+    }
+  ]
+}</pre></details><details><summary>Step 9 · deliver · <span class="ok">Accepted</span></summary><pre>{
+  &#34;step&#34;: 9,
+  &#34;event&#34;: {
+    &#34;op&#34;: &#34;deliver&#34;,
+    &#34;host&#34;: &#34;cloud-ledger&#34;,
+    &#34;id&#34;: 2,
+    &#34;incoming&#34;: 21,
+    &#34;payload&#34;: &#34;statement batch 2&#34;
+  },
+  &#34;state&#34;: [
+    {
+      &#34;id&#34;: 1,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 1,
+      &#34;kind&#34;: &#34;primary&#34;,
+      &#34;established&#34;: true,
+      &#34;incoming&#34;: 15,
+      &#34;queued&#34;: 0
+    },
+    {
+      &#34;id&#34;: 2,
+      &#34;user&#34;: &#34;bank-adapter&#34;,
+      &#34;host&#34;: &#34;cloud-ledger&#34;,
+      &#34;number&#34;: 2,
+      &#34;kind&#34;: &#34;auxiliary&#34;,
+      &#34;parent&#34;: 1,
+      &#34;established&#34;: true,
+      &#34;incoming&#34;: 21,
+      &#34;queued&#34;: 1
+    }
+  ]
+}</pre></details><details><summary>Step 10 · close · <span class="ok">Accepted</span></summary><pre>{
+  &#34;step&#34;: 10,
+  &#34;event&#34;: {
+    &#34;op&#34;: &#34;close&#34;,
+    &#34;user&#34;: &#34;bank-adapter&#34;,
+    &#34;id&#34;: 1
+  },
+  &#34;state&#34;: []
+}</pre></details><details><summary>Step 11 · ack · <span class="error">Rejected</span></summary><pre>{
+  &#34;step&#34;: 11,
+  &#34;event&#34;: {
+    &#34;op&#34;: &#34;ack&#34;,
+    &#34;user&#34;: &#34;bank-adapter&#34;,
+    &#34;host&#34;: &#34;cloud-ledger&#34;,
+    &#34;id&#34;: 2,
+    &#34;incoming&#34;: 21
+  },
+  &#34;error&#34;: &#34;unknown or mismatched request&#34;,
+  &#34;state&#34;: []
+}</pre></details>
+<footer>MIT-licensed source and tests · RFC covered: 11 · Next: 12 · No real transfers or credentials</footer><script>document.getElementById('expand').addEventListener('click',()=>{const all=[...document.querySelectorAll('details')];const open=all.some(x=>!x.open);all.forEach(x=>x.open=open);document.getElementById('expand').textContent=open?'Collapse all steps':'Expand all steps';});</script></html>
