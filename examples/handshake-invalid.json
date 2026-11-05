@@ -1,0 +1,6 @@
+[
+  {"valid":true,"data":"original"},
+  {"valid":true,"data":"changed"},
+  {"ready":true,"valid":true,"data":"original","last":false},
+  {"ready":true,"valid":true,"data":"end","last":true}
+]

@@ -1,0 +1,165 @@
+{
+  "rows": [
+    {
+      "tick": 1,
+      "signals": {
+        "ready": false,
+        "valid": true,
+        "data": "statement-header"
+      },
+      "action": "stall",
+      "held": {
+        "data": "statement-header",
+        "last": false
+      },
+      "partial": [],
+      "accepted_words": 0,
+      "completed_frames": 0,
+      "dropped_words": 0
+    },
+    {
+      "tick": 2,
+      "signals": {
+        "ready": false,
+        "valid": true,
+        "data": "statement-header"
+      },
+      "action": "stall",
+      "held": {
+        "data": "statement-header",
+        "last": false
+      },
+      "partial": [],
+      "accepted_words": 0,
+      "completed_frames": 0,
+      "dropped_words": 0
+    },
+    {
+      "tick": 3,
+      "signals": {
+        "ready": true,
+        "valid": true,
+        "data": "statement-header"
+      },
+      "action": "transfer",
+      "partial": [
+        "statement-header"
+      ],
+      "accepted_words": 1,
+      "completed_frames": 0,
+      "dropped_words": 0
+    },
+    {
+      "tick": 4,
+      "signals": {
+        "ready": false,
+        "valid": true,
+        "data": "statement-body",
+        "last": true
+      },
+      "action": "stall",
+      "held": {
+        "data": "statement-body",
+        "last": true
+      },
+      "partial": [
+        "statement-header"
+      ],
+      "accepted_words": 1,
+      "completed_frames": 0,
+      "dropped_words": 0
+    },
+    {
+      "tick": 5,
+      "signals": {
+        "ready": true,
+        "valid": true,
+        "data": "statement-body",
+        "last": true
+      },
+      "action": "complete",
+      "partial": [],
+      "completed": [
+        "statement-header",
+        "statement-body"
+      ],
+      "accepted_words": 2,
+      "completed_frames": 1,
+      "dropped_words": 0
+    },
+    {
+      "tick": 6,
+      "signals": {
+        "ready": true,
+        "valid": false
+      },
+      "action": "idle",
+      "partial": [],
+      "accepted_words": 2,
+      "completed_frames": 1,
+      "dropped_words": 0
+    },
+    {
+      "tick": 7,
+      "signals": {
+        "ready": true,
+        "valid": true,
+        "data": "incomplete-batch"
+      },
+      "action": "transfer",
+      "partial": [
+        "incomplete-batch"
+      ],
+      "accepted_words": 3,
+      "completed_frames": 1,
+      "dropped_words": 0
+    },
+    {
+      "tick": 8,
+      "signals": {
+        "ready": false,
+        "valid": false,
+        "reset": true
+      },
+      "action": "reset",
+      "partial": [],
+      "accepted_words": 3,
+      "completed_frames": 1,
+      "dropped_words": 1
+    },
+    {
+      "tick": 9,
+      "signals": {
+        "ready": true,
+        "valid": true,
+        "data": "new-batch",
+        "last": true
+      },
+      "action": "complete",
+      "partial": [],
+      "completed": [
+        "new-batch"
+      ],
+      "accepted_words": 4,
+      "completed_frames": 2,
+      "dropped_words": 1
+    },
+    {
+      "tick": 10,
+      "signals": {
+        "ready": false,
+        "valid": false
+      },
+      "action": "idle",
+      "partial": [],
+      "accepted_words": 4,
+      "completed_frames": 2,
+      "dropped_words": 1
+    }
+  ],
+  "violations": 0,
+  "finished": true,
+  "accepted_words": 4,
+  "completed_frames": 2,
+  "dropped_words": 1
+}

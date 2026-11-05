@@ -1,0 +1,12 @@
+[
+  {"valid":true,"data":"statement-header"},
+  {"valid":true,"data":"statement-header"},
+  {"ready":true,"valid":true,"data":"statement-header"},
+  {"valid":true,"data":"statement-body","last":true},
+  {"ready":true,"valid":true,"data":"statement-body","last":true},
+  {"ready":true},
+  {"ready":true,"valid":true,"data":"incomplete-batch"},
+  {"reset":true},
+  {"ready":true,"valid":true,"data":"new-batch","last":true},
+  {}
+]
