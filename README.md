@@ -124,3 +124,7 @@ Public static viewer: https://rfc12-handshake-lab.sadhu-sreenivas.chatgpt.site .
 ## RFC 13 — explicit end-of-file framing
 
 Covered **RFC 13**. Next **RFC 14**. The standalone MIT-licensed Go lab is in [rfc-0013-eof-lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0013-eof-lab) at [`187b461`](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0013-eof-lab/commit/187b461b3f0f5106cd6a74f8213e4f71624f47de). It demonstrates a zero-length end marker and rejects missing markers, truncated frames and mismatched expected digests.
+
+## RFC 14 and RFC 15
+
+The [RFC Editor index](https://www.rfc-editor.org/rfc-index.txt) records number 14 as **Not Issued**. Covered **RFC 15**. Next **RFC 16**. The public MIT-licensed [terminal routing lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0015-terminal-lab/commit/4a4c84e160c23ef91b05d9572aba041564b90130) replays escape commands and simulated remote input.
