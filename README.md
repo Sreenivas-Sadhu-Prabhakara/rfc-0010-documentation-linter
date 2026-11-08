@@ -128,3 +128,7 @@ Covered **RFC 13**. Next **RFC 14**. The standalone MIT-licensed Go lab is in [r
 ## RFC 14 and RFC 15
 
 The [RFC Editor index](https://www.rfc-editor.org/rfc-index.txt) records number 14 as **Not Issued**. Covered **RFC 15**. Next **RFC 16**. The public MIT-licensed [terminal routing lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0015-terminal-lab/commit/4a4c84e160c23ef91b05d9572aba041564b90130) replays escape commands and simulated remote input.
+
+## RFC 16 — administrative distribution planner
+
+Covered **RFC 16**. Next **RFC 17**. The public MIT-licensed [distribution planner](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0016-distribution-lab/commit/a6b877d4b29cbdfed8279119b9bf4494ed9a0c21) compares synthetic topic subscriptions and checks required team membership. RFC 16 is an administrative memo about MIT receiving NWG memos.
