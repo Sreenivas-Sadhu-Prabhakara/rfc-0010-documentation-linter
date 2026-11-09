@@ -132,3 +132,7 @@ The [RFC Editor index](https://www.rfc-editor.org/rfc-index.txt) records number 
 ## RFC 16 — administrative distribution planner
 
 Covered **RFC 16**. Next **RFC 17**. The public MIT-licensed [distribution planner](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0016-distribution-lab/commit/a6b877d4b29cbdfed8279119b9bf4494ed9a0c21) compares synthetic topic subscriptions and checks required team membership. RFC 16 is an administrative memo about MIT receiving NWG memos.
+
+## RFC 17 — link expiry and table capacity
+
+Covered **RFC 17**. Next **RFC 18**. The public MIT-licensed [link expiry lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0017-link-expiry-lab/commit/d9293773059ed0862195ef17da51b3c10793c37c) replays a bounded table in logical time. Idle entries can expire while active transfers retain their slots. A new attempt can be delayed if every slot is occupied.
