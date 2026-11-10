@@ -136,3 +136,7 @@ Covered **RFC 16**. Next **RFC 17**. The public MIT-licensed [distribution plann
 ## RFC 17 — link expiry and table capacity
 
 Covered **RFC 17**. Next **RFC 18**. The public MIT-licensed [link expiry lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0017-link-expiry-lab/commit/d9293773059ed0862195ef17da51b3c10793c37c) replays a bounded table in logical time. Idle entries can expire while active transfers retain their slots. A new attempt can be delayed if every slot is occupied.
+
+## RFC 18 — control queue isolation
+
+Covered **RFC 18**. Next **RFC 19**. The public MIT-licensed [control link lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0018-control-link-lab/commit/f3aea6977e05573ea9dacdb639c31de6d57b3135) compares a shared FIFO with one reserved slot per class under the same total capacity. The synthetic burst shows the tradeoff between host isolation and sharing idle capacity.
