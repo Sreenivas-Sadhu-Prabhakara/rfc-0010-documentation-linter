@@ -144,3 +144,7 @@ Covered **RFC 18**. Next **RFC 19**. The public MIT-licensed [control link lab](
 ## RFC 19 — locality scheduling
 
 Covered **RFC 19**. Next **RFC 20**. The public MIT-licensed [locality scheduling lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0019-locality-lab/commit/92cc9db1d46d19130565aa5bed220693c4d87f0c) compares FIFO with a resident-user preference and a bounded burst. It preserves each user's own message order and reports swaps, total time and individual completion times for a synthetic fixed backlog.
+
+## RFC 20 — ASCII interchange
+
+Covered **RFC 20**. Next **RFC 21**. The public MIT-licensed [ASCII interchange lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0020-ascii-lab/commit/213455e2430ea5539a060cb733eb8863b7fddb3d) checks the seven-bit byte rule and compares the period and carriage-return receiver examples. RFC 20 is Internet Standard STD 80.
