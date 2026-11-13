@@ -148,3 +148,7 @@ Covered **RFC 19**. Next **RFC 20**. The public MIT-licensed [locality schedulin
 ## RFC 20 — ASCII interchange
 
 Covered **RFC 20**. Next **RFC 21**. The public MIT-licensed [ASCII interchange lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0020-ascii-lab/commit/213455e2430ea5539a060cb733eb8863b7fddb3d) checks the seven-bit byte rule and compares the period and carriage-return receiver examples. RFC 20 is Internet Standard STD 80.
+
+## RFC 21 — meeting follow-up register
+
+Covered **RFC 21**. Next **RFC 22**. The public MIT-licensed [meeting follow-up register](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0021-meeting-lab/commit/9d62ccfc37baeffc8988155109bc65c5acd04a3e) keeps reported notes, questions, decisions and actions distinct and identifies missing owners, deadlines and completion evidence.
