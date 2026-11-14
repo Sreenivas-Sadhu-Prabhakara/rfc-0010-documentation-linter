@@ -152,3 +152,7 @@ Covered **RFC 20**. Next **RFC 21**. The public MIT-licensed [ASCII interchange 
 ## RFC 21 — meeting follow-up register
 
 Covered **RFC 21**. Next **RFC 22**. The public MIT-licensed [meeting follow-up register](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0021-meeting-lab/commit/9d62ccfc37baeffc8988155109bc65c5acd04a3e) keeps reported notes, questions, decisions and actions distinct and identifies missing owners, deadlines and completion evidence.
+
+## RFC 22 — binary control decoder
+
+Covered **RFC 22**. Next **RFC 23**. The public MIT-licensed [control decoder](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0022-control-decoder/commit/af66ff792d752cccc237c30a71aba4b2c3698625) decodes the nine historical opcode layouts from a teaching payload and reports byte offsets for invalid and truncated commands.
