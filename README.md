@@ -156,3 +156,7 @@ Covered **RFC 21**. Next **RFC 22**. The public MIT-licensed [meeting follow-up 
 ## RFC 22 — binary control decoder
 
 Covered **RFC 22**. Next **RFC 23**. The public MIT-licensed [control decoder](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0022-control-decoder/commit/af66ff792d752cccc237c30a71aba4b2c3698625) decodes the nine historical opcode layouts from a teaching payload and reports byte offsets for invalid and truncated commands.
+
+## RFC 23 — control message batching
+
+Covered **RFC 23**. Next **RFC 24**. The public MIT-licensed [batching lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0023-batching-lab/commit/41e11c6883e98de90d2a9925748caeaea641fc54) compares single-command sends with draining queued commands when a simulated control link becomes ready. The receiver uses the RFC 22 decoder to preserve and report command order.
