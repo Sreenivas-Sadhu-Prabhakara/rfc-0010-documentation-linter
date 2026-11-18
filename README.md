@@ -168,3 +168,7 @@ Covered **RFC 24**. Next **RFC 25**. The public MIT-licensed [memo register](htt
 ## RFC 25 — link ID budgets
 
 Covered **RFC 25**. The RFC Editor lists **RFC 26** as Not Issued. The next published document is **RFC 27**. The public MIT-licensed [link budget lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/0e36922335638f118fc24296e04f24844a99aee8) compares 32-, 64-, and 255-slot direct-index tables against one trace. [GitHub Pages deployed the static sample](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc25/).
+
+## RFC 27 — revision-aware memo circulation
+
+Covered **RFC 27**. Next **RFC 28**. The public MIT-licensed [Go planner](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/43ee5f111fef222cf3f291c1652797865037f72a) compares a dispatch ledger with the current roster and tells each current site whether it needs a first copy, an updated copy, or no new dispatch. [Verified static sample](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc27/).
