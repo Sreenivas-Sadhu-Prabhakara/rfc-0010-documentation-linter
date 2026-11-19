@@ -172,3 +172,7 @@ Covered **RFC 25**. The RFC Editor lists **RFC 26** as Not Issued. The next publ
 ## RFC 27 — revision-aware memo circulation
 
 Covered **RFC 27**. Next **RFC 28**. The public MIT-licensed [Go planner](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/43ee5f111fef222cf3f291c1652797865037f72a) compares a dispatch ledger with the current roster and tells each current site whether it needs a first copy, an updated copy, or no new dispatch. [Verified static sample](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc27/).
+
+## RFC 28 — clock accuracy and delay
+
+Covered **RFC 28**. Next **RFC 29**. The public MIT-licensed [clock accuracy lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/493b8972ae3dc65edff811230f4253c5af9a4bd8) derives possible nonnegative delay intervals from assumed endpoint timestamp error bounds and evaluates a latency budget. [Verified static sample](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc28/).
