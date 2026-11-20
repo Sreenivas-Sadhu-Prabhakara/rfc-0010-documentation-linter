@@ -176,3 +176,7 @@ Covered **RFC 27**. Next **RFC 28**. The public MIT-licensed [Go planner](https:
 ## RFC 28 — clock accuracy and delay
 
 Covered **RFC 28**. Next **RFC 29**. The public MIT-licensed [clock accuracy lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/493b8972ae3dc65edff811230f4253c5af9a4bd8) derives possible nonnegative delay intervals from assumed endpoint timestamp error bounds and evaluates a latency budget. [Verified static sample](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc28/).
+
+## RFC 29 — clock resolution and RTT
+
+Covered **RFC 29**. Next **RFC 30**. The public MIT-licensed [clock resolution lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/ce6d71c9a9ae80cd4d53cc65f9268c23c3c9528a) compares synthetic round trips measured on 100 µs, 1 ms, and 25.6 ms tick grids. [Verified static sample](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc29/).
