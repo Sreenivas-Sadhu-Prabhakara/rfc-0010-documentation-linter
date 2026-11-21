@@ -180,3 +180,7 @@ Covered **RFC 28**. Next **RFC 29**. The public MIT-licensed [clock accuracy lab
 ## RFC 29 — clock resolution and RTT
 
 Covered **RFC 29**. Next **RFC 30**. The public MIT-licensed [clock resolution lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/ce6d71c9a9ae80cd4d53cc65f9268c23c3c9528a) compares synthetic round trips measured on 100 µs, 1 ms, and 25.6 ms tick grids. [Verified static sample](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc29/).
+
+## RFC 30 — memo directory consistency
+
+Covered **RFC 30**. Next **RFC 31**. The public MIT-licensed [directory checker](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/7a52c254f01de3eed38ad8c6e0793b067796d617) joins a distribution roster with directory records, flags contact mismatches and missing records, and identifies unused directory sites. [Verified static sample](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc30/).
