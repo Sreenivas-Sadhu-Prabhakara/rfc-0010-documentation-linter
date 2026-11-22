@@ -184,3 +184,7 @@ Covered **RFC 29**. Next **RFC 30**. The public MIT-licensed [clock resolution l
 ## RFC 30 — memo directory consistency
 
 Covered **RFC 30**. Next **RFC 31**. The public MIT-licensed [directory checker](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/7a52c254f01de3eed38ad8c6e0793b067796d617) joins a distribution roster with directory records, flags contact mismatches and missing records, and identifies unused directory sites. [Verified static sample](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc30/).
+
+## RFC 31 — symbolic binary fields
+
+Covered **RFC 31**. Next **RFC 32**. The public MIT-licensed [field lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/0409547595bf8d9a13247aab90c80e5334525baf) packs a bounded concatenation of unsigned fields least-significant bit first, shows field offsets, and verifies values by decoding the bytes. [Verified static sample](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc31/).
