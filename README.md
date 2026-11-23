@@ -188,3 +188,7 @@ Covered **RFC 30**. Next **RFC 31**. The public MIT-licensed [directory checker]
 ## RFC 31 — symbolic binary fields
 
 Covered **RFC 31**. Next **RFC 32**. The public MIT-licensed [field lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/0409547595bf8d9a13247aab90c80e5334525baf) packs a bounded concatenation of unsigned fields least-significant bit first, shows field offsets, and verifies values by decoding the bytes. [Verified static sample](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc31/).
+
+## RFC 32 — host tracing and clock offsets
+
+Covered **RFC 32**. Next **RFC 33**. The public MIT-licensed [tracing lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/000d0251a2af244892ed2290168cb9c4fe1414a6) shows local host span measurements with constant clock offsets and compares them with raw cross-host delay measurements on the same synthetic path. [Verified static sample](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc32/).
