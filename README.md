@@ -192,3 +192,7 @@ Covered **RFC 31**. Next **RFC 32**. The public MIT-licensed [field lab](https:/
 ## RFC 32 — host tracing and clock offsets
 
 Covered **RFC 32**. Next **RFC 33**. The public MIT-licensed [tracing lab](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/000d0251a2af244892ed2290168cb9c4fe1414a6) shows local host span measurements with constant clock offsets and compares them with raw cross-host delay measurements on the same synthetic path. [Verified static sample](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc32/).
+
+## RFC 33 — socket naming and direction
+
+Covered **RFC 33**. Next **RFC 34**. The public MIT-licensed [Go socket inspector](https://github.com/Sreenivas-Sadhu-Prabhakara/rfc-0024-memo-register/commit/7f741a49a9731ce9b43a988dd7bc77425749c65c) composes symbolic 40-bit labels, checks send/receive direction compatibility, and evaluates local AEN relabel proposals while preserving user/host identity and direction. [Verified hosted static report](https://sreenivas-sadhu-prabhakara.github.io/rfc-0024-memo-register/rfc33/). Full Go CI and Pages deployment passed. This is an educational subset, not an NCP implementation or a live backend. Standalone repository creation remains pending GitHub browser sign-in; actual source is checked into the existing public repository.
